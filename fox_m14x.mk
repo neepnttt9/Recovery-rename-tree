@@ -1,25 +1,43 @@
-## OrangeFox specific properties
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# AVB Disable (OFRP Addon)
-PRODUCT_ODM_DISABLE_FBE_DECRYPTION := true
+# ========================================
+# NON-VANILLA PACKAGES + CRB TOOLS
+# ========================================
 PRODUCT_PACKAGES += \
-    disable_dm-verity \
-    disable-verification
-
-# OFRP Extras
-PRODUCT_PACKAGES += \
-    OrangeFox \
-    charger_res_images \
-    charger \
-    libinit_m14x \
+    # Non-Vanilla Core
+    bash \
+    nano \
+    tar \
+    sed \
+    zip \
+    unzip \
+    digest_cache \
+    
+    # CRB Tools
+    crb_tool \
+    crb_flashlight \
+    crb_gsi_flasher \
+    crb_system_rw \
+    crb_avb_bypass \
+    
+    # ro2rw Tools
+    ro2rw \
+    system_rw_helper \
+    
+    # AVB Tools
+    magiskboot \
+    avb_bypass \
+    
+    # GSI Tools
+    gsi_flasher \
+    treble_helper \
+    
+    # Filesystem Tools
     fsck.exfat \
-    fsck.ntfs
+    fsck.ntfs \
+    mkfs.exfat \
+    mkfs.ntfs
 
-# GApps compatibility
-PRODUCT_PACKAGES += \
-    libion \
-    libGLESv3 \
-    ionalloc \
-    ashmemdll \
-    android.hardware.thermal@2.0-service.m14x
+# Non-Vanilla Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nonvanilla.enabled=true \
+    ro.orangefox.nonvanilla=1 \
+    persist.sys.nonvanilla=1
