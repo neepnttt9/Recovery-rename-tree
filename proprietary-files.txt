@@ -1,0 +1,83 @@
+# ========================================
+# proprietary-files.txt - m14x OrangeFox
+# ========================================
+# Auto-generated for m14x Non-Vanilla GSI Tree
+# Kernel: Image.gz-dtb (24.3MB, 63.52% LZ4)
+# DTBO: Integrated from partition
+
+# ========================================
+# KERNEL + DTBO (Your Custom Files)
+# ========================================
+prebuilt/kernel
+prebuilt/dtbo/dtbo.img
+
+# ========================================
+# BOOT + RECOVERY IMAGES
+# ========================================
+/dev/block/bootdevice/by-name/boot           boot.img
+/dev/block/bootdevice/by-name/recovery       recovery-stock.img
+/dev/block/bootdevice/by-name/dtbo           dtbo.img
+/dev/block/bootdevice/by-name/vbmeta         vbmeta.img
+
+# ========================================
+# MODEM + FIRMWARE
+# ========================================
+/dev/block/bootdevice/by-name/modem          modem.img
+/dev/block/bootdevice/by-name/firmware       firmware/
+/vendor/firmware/                            vendor/firmware/
+/firmware/image/                             firmware/image/
+
+# ========================================
+# VENDOR HALs + LIBRARIES (GSI Critical)
+# ========================================
+/vendor/lib64/hw/                            vendor/lib64/hw/
+/vendor/lib64/libion.so                      vendor/lib64/libion.so
+/vendor/lib64/libGLES_mali.so                vendor/lib64/libGLES_mali.so
+/vendor/lib64/egl/                           vendor/lib64/egl/
+/vendor/etc/vintf/                           vendor/etc/vintf/
+/vendor/odm/etc/vintf/                       vendor/odm/etc/vintf/
+
+# ========================================
+# SYSTEM BLIBS (Treble)
+/system/lib64/libGLESv3.so                   system/lib64/libGLESv3.so
+/system/etc/firmware/                        system/etc/firmware/
+/system/vendor/lib64/                        system/vendor/lib64/
+
+# ========================================
+# DYNAMIC PARTITIONS (Super)
+/dev/block/bootdevice/by-name/super          super.img
+/dev/block/bootdevice/by-name/system         system.img
+/dev/block/bootdevice/by-name/vendor         vendor.img
+/dev/block/bootdevice/by-name/product        product.img
+/dev/block/bootdevice/by-name/system_ext     system_ext.img
+/dev/block/bootdevice/by-name/odm            odm.img
+
+# ========================================
+# AVB + SECURITY
+# ========================================
+/dev/block/bootdevice/by-name/metadata       metadata.img
+/dev/block/bootdevice/by-name/devinfo        devinfo.img
+/dev/block/bootdevice/by-name/frp            frp.img
+
+# ========================================
+# DEVICE INFO (Build Reference)
+/proc/device-tree/compatible                 compatible.txt
+/proc/cmdline                                cmdline.txt
+/proc/partitions                             partitions.txt
+
+# ========================================
+# NON-VANILLA + CRB TOOLS (Prebuilt)
+/system/bin/bash                             
+/system/xbin/nano                            
+/system/xbin/tar                             
+/system/xbin/zip                             
+/system/xbin/unzip                           
+/system/xbin/magiskboot                      
+
+# ========================================
+# BUILD INFO
+# ========================================
+# Kernel: Image.gz-dtb (24,286,921 bytes, 63.52% LZ4)
+# DTBO: dtbo.img (integrated)
+# Features: GSI + ro2rw + CRB + AVB Bypass
+# OrangeFox: R12.1-NV (35+ flags)
